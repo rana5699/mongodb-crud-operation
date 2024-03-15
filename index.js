@@ -96,7 +96,7 @@ app.get("/products/:id", async (req, res) => {
         productById,
       });
     } else {
-      res.status(200).send({
+      res.status(404).send({
         sucsses: false,
         message: `NOT Found product by this ID : {productId}`,
       });
@@ -137,7 +137,7 @@ app.get("/product/:brand/:id", async (req, res) => {
     if (brandById) {
       res.status(200).send({
         sucsses: true,
-        message: `Found  ${brandId} product`,
+        message: `Found this id:  ${brandId} product`,
         brandById,
       });
     } else {
@@ -160,7 +160,7 @@ app.delete("/product/:id", async (req, res) => {
     if (deleteItem) {
       res.status(200).send({
         sucsses: true,
-        message: `Delete  ${id} products`,
+        message: `Delete sucssesfully this  ${id} products`,
         deleteItem,
       });
     } else {
@@ -183,7 +183,7 @@ app.delete("/product/:brand/:id", async (req, res) => {
     if (deleteItem) {
       res.status(200).send({
         sucsses: true,
-        message: `Delete  ${id} products`,
+        message: `Delete sucssesfully by this   ${id} products`,
         deleteItem,
       });
     } else {
@@ -215,7 +215,7 @@ app.put("/product/:id", async (req, res) => {
     if (updateProduct) {
       res.status(200).send({
         sucsses: true,
-        message: `Update this  ${id} products`,
+        message: `Update sucssesfully by this  ${id} products`,
         updateProduct,
       });
     } else {
